@@ -60,3 +60,5 @@ systemctl restart kubelet
 
 sudo swapoff -a
 sed -i '/ swap / s/^\\(.*\\)$/#\\1/g' /etc/fstab
+
+echo 'Environment="KUBELET_EXTRA_ARGS=--cloud-provider=external"' >> /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
